@@ -28,7 +28,7 @@
 # 0:1.3
 
 # 1:GAMEDIR, VERSIONFILE [, GITHUBREPO ]
-1:KerbalHModuleAnimateGenericEffectsotSeat, ModuleAnimateGenericEffects.version
+1:ModuleAnimateGenericEffects, ModuleAnimateGenericEffects.version
 
 # 2:PROJNAME, PROJFILE, VERSIONFILE, PLUGINSFOLDER
 2:ModuleAnimateGenericEffects,ModuleAnimateGenericEffects/ModuleAnimateGenericEffects.csproj,ModuleAnimateGenericEffects.version,GameData/ModuleAnimateGenericEffects/Plugins
