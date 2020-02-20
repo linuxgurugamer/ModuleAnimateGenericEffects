@@ -36,8 +36,8 @@
 # 3:SOURCEFILE, DESTDIR
 3:ModuleAnimateGenericEffects.version,GameData/ModuleAnimateGenericEffects
 
-3:License.md,GameData/CivilianPopulation
-3:Readme.md,GameData/CivilianPopulation
+3:License.md,GameData/ModuleAnimateGenericEffects
+3:Readme.md,GameData/ModuleAnimateGenericEffects
 
 #
 # End of file
