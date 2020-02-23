@@ -41,6 +41,8 @@ namespace CivilianPopulation
 
         public void  DoOnMovingEffect (float f1, float f2)
         {
+            if (HighLogic.LoadedSceneIsEditor)
+                return;
             if (anim[animationName].time == 0)
             {
                 currentEffect = retractEffectName;
@@ -93,7 +95,7 @@ namespace CivilianPopulation
         [KSPEvent(unfocusedRange = 5f, guiActiveUnfocused = true, guiActive = true, guiActiveEditor = true, guiName = "#autoLOC_6001329")]
         new public void Toggle()
         {
-            if (!HighLogic.LoadedSceneIsEditor)
+            //if (!HighLogic.LoadedSceneIsEditor)
             {
                 base.Toggle();
                 int num = base.part.symmetryCounterparts.Count;
