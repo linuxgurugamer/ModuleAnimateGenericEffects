@@ -3,9 +3,9 @@ using KSP;
 using KSP.UI.Screens;
 using System.Collections;
 
-namespace CivilianPopulation
+namespace ModuleAnimateGenericEffects
 {
-    class ModuleAnimateGenericEffects : ModuleAnimateGeneric
+    public class ModuleAnimateGenericEffects : ModuleAnimateGeneric
     {
         #region KSPFields
         [KSPField]
@@ -32,14 +32,14 @@ namespace CivilianPopulation
         #endregion
 
         string currentEffect = "";
-        
+
         public void Start()
         {
             OnMoving.Add(DoOnMovingEffect);
             OnStop.Add(StopEffect);
         }
 
-        public void  DoOnMovingEffect (float f1, float f2)
+        public void DoOnMovingEffect(float f1, float f2)
         {
             if (HighLogic.LoadedSceneIsEditor)
                 return;
