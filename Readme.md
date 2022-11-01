@@ -21,9 +21,6 @@ the following additions:
 		postRetractEffectName = retracted
 		postRetractEffectLength = 0.5
 		animSpeed = 0.1
-		animationRampSpeed = 0.005
-		customAnimationSpeed = 1
-		reverseGUIName = Play Reverse
 
 where
 
@@ -33,9 +30,6 @@ where
 	retractEffectName is the effect(s) which should be played when retracting
 	postRetractEffectName is the effect(s) which should be played when retractment is completed
 	postRetractEffectLength is how long the post-retractment effect should be played
-	animationRampSpeed controls how quickly the animation gets up to speed.  If not specified, starts at full speed
-	customAnimationSpeed is a multiplier to adust the speed without having to change the model
-	reverseGUIName is the text to put into the PAW to reverse the motion.  If not specified, then will not be active
 
 Default Values
 
@@ -46,9 +40,5 @@ Default Values
 		postRetractEffectName = 
 		postRetractEffectLength = 0.5
 		animSpeed = 1
-		animationRampSpeed = 0.005
-		customAnimationSpeed = 1
-		reverseGUIName = 
-
 
 	If no value is specified, no effect will be played
