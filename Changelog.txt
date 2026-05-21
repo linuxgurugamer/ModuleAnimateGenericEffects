@@ -1,5 +1,8 @@
 Changelog
 
+0.1.6
+	Version bump for ckan issue
+
 0.1.5
 	Reverted back to 0.1.3, using 0.1.5 for CKAN support
 

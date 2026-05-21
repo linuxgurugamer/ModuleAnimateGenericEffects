@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
-using KSP;
-using KSP.UI.Screens;
-using System.Collections;
+using System.Linq;
+using KSP.Localization;
 
 namespace ModuleAnimateGenericEffects
 {
+
+#if false
     public class ModuleAnimateGenericEffects : ModuleAnimateGeneric
     {
         #region KSPFields
@@ -113,4 +114,78 @@ namespace ModuleAnimateGenericEffects
             base.Toggle();
         }
     }
+#endif
+#if false
+    public class ModuleDeployableSolarPanelwSecondaryAnim : ModuleDeployableSolarPanel
+    {
+        internal static Dictionary<string, List<Sequence>> seqDict = null;
+        Sequence.MovementStatus movementStatus = Sequence.MovementStatus.undef;
+        List<Sequence> sequenceAnimations = null;
+
+        Sequence firstSeq = null;
+        Sequence lastSeq = null;
+
+        #region KSPFields
+        [KSPField]
+        public new string extendActionName = "#autoLOC_6001354";
+
+        [KSPField]
+        public new string retractActionName = "#autoLOC_6001354";
+
+        [KSPField]
+        public new string extendpanelsActionName = "#autoLOC_6001354";
+        #endregion
+
+        [KSPEvent(guiActive = true, guiActiveEditor = true,  guiName = "Extend test" )]
+        public   void Extend2()
+        {
+            base.Extend();
+            StartCoroutine("SlowUpdate");
+
+        }
+
+        public void Start()
+        {
+            Events["Extend"].active = false;
+
+        }
+
+        int cnt = 0;
+        IEnumerator SlowUpdate()
+        {
+            while (true)
+            {
+
+                yield return new WaitForSeconds(1f);
+                if (anim.isPlaying )
+                {
+                    if (cnt++ >8)
+                        anim.Stop();
+                    continue;
+                }
+                ModuleAnimateGeneric mag = part.FindModuleImplementing<ModuleAnimateGeneric>();
+                if (mag != null)
+                {
+                    if (!mag.IsMoving())
+                    {
+                        mag.enabled = true;
+                        mag.isOneShot = true;
+                        mag.Toggle();
+                    }
+                }
+                else
+                {
+                }
+                if (mag.Progress < 1)
+                    yield return new WaitForSeconds(1f);
+                else
+                {
+                    mag.Toggle();
+                    yield return null;
+                }
+            }
+        }
+    }
+#endif
+
 }
